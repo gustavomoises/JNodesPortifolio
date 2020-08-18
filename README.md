@@ -1,4 +1,4 @@
-# JNodes Portifolio
+# Node.JS Portifolio
 
 I developed the seating table module for a restaurant management portal called Table Ready. It allows the restaurant's manager to see the tables that are available and set a group party to a table. The application allows grouping tables to increase the number of seats for a larger group.
 
