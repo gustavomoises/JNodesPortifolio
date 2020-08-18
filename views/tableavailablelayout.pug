@@ -1,0 +1,74 @@
+head
+  title Restaurant Layout
+  style(type='text/CSS').
+    .layout {position:absolute; top:20; left:509; visibility:visible;z-index:0;}
+    .cluster {position:absolute; visibility:visible;z-index:1;}
+    .table {position:absolute; visibility:visible;z-index:2;}
+    #A6{top:169; left:605}
+    #B4{top:165; left:730}
+    #B2{top:165; left:895}
+    #C1{top:336; left:732}
+    #C2{top:336; left:820}
+    #C3{top:336; left:906}
+    #c_A6{top:169; left:805}
+    #c_B4{top:165; left:930}
+    #c_B2{top:165; left:895}
+    #c_C1{top:336; left:732}
+    #c_C2{top:336; left:820}
+    #c_C3{top:336; left:906}
+    #c_B4_B2{top:155; left:720}
+    #c_C1_C2{top:329; left:725}
+    #c_C2_C3{top:329; left:811}
+    #c_C1_C2_C3{top:329; left:722}
+h2 Table Status in the Restaurant
+body
+  table(border='1')
+    tr
+      th TableId
+      th Available?
+      th Checkout?
+      th Cleaning?
+      th ClusterId
+
+
+    each val in nos
+      tr
+        td= val.tableId
+        td= val.tableAvailabilityStatus
+        td= val.tableCheckoutStatus
+        td= val.tableCleaningStatus
+        td= val.clusterId
+.layout
+  img(name='layout' src='layout')
+#A6.table
+  img(name='A_6' src=T1)
+#B4.table
+  img(name='B_4' src=T2)
+#B2.table
+  img(name='B_2' src=T3)
+#C1.table
+  img(name='C1' src=T4)
+#C2.table
+  img(name='C2' src=T5)
+#C3.table
+  img(name='C3' src=T6)
+#c_A6.cluster
+  img(name='A_6' src=C1)
+#c_B4.cluster
+  img(name='B_4' src=C2)
+#c_B2.cluster
+  img(name='B_2' src=C3)
+#c_C1.cluster
+  img(name='C1' src=C4)
+#c_C2.cluster
+  img(name='C2' src=C5)
+#c_C3.cluster
+  img(name='C3' src=C6)
+#c_B4_B2.cluster
+  img(name='c_B4_CB2' src=C7)
+#c_C1_C2.cluster
+  img(name='c_C1_C2' src=C8)
+#c_C2_C3.cluster
+  img(name='c_C2_C3' src=C9)
+#c_C1_C2_C3.cluster
+  img(name='c_C1_C2_C3' src=C10)

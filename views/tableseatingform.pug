@@ -1,0 +1,61 @@
+doctype html
+head
+  meta(charset='ISO-8859-1')
+  title #{ title }
+h2 #{mens}
+html(lang='en')
+  body
+    form(method='post' action='/tableseatingentry')
+      |Table Group Id:
+      input#clusterId(type='number' name="clusterId")
+      br
+      | &#x9;&#x9;Reservation Id:
+      input#reservationId(type='number' name="reservationId")
+      br
+      | &#x9;&#x9;Waitlist ID:
+      input#waitlist(type='number' name="waitlistId")
+      br
+      button(type='submit') Save
+    br
+    table(border='1', style='text-align:center')
+      caption Clusters/Tables Available ordered by priority
+      tr
+        th Id. #
+        th Table Group
+        th Number of seats
+      each val in nws
+        tr
+          td= val.clusterId
+          td= val.clusterName
+          td= val.totalSeats
+
+    table(border='1', style='text-align:center')
+      caption Confirmed Reservations
+      tr
+        th Reserv. Id
+        th Party Size
+        th Waiting time in min 
+        th Cutomer Id
+        th Reservation Time
+      each val in nys
+        tr
+          td= val.reservationId
+          td= val.reservationPartySize
+          td= val.restimemin
+          td= val.customerId
+          td= val.reservationDateTime
+
+
+    table(border='1', style='text-align:center')
+      caption Active WaitList
+      tr
+        th Waitlist Id
+        th Party Size
+        th Waiting time in min
+        th Cutomer Id
+      each val in nus
+        tr
+          td= val.waitlistId
+          td= val.waitlistPartySize
+          td= val.waitimemin
+          td= val.customerId

@@ -1,0 +1,20 @@
+doctype html
+h2 Table Status in the Restaurant
+html(lang='en')
+  body
+    table(border='1')
+      tr
+        th TableId
+        th Available?
+        th Checkout?
+        th Cleaning?
+        th ClusterId
+
+
+      each val in nos
+        tr
+          td= val.tableId
+          td= val.tableAvailabilityStatus
+          td= val.tableCheckoutStatus
+          td= val.tableCleaningStatus
+          td= val.clusterId

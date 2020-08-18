@@ -1,0 +1,102 @@
+head
+  meta(charset='ISO-8859-1')
+  title Restaurant Layout
+  style(type='text/CSS').
+    .layout {position:absolute; top:20; left:609; visibility:visible;z-index:0;}
+    .cluster {position:absolute; visibility:visible;z-index:1;}
+    .table {position:absolute; visibility:visible;z-index:2;}
+    #A6{top:169; left:705}
+    #B4{top:165; left:830}
+    #B2{top:165; left:995}
+    #C1{top:336; left:832}
+    #C2{top:336; left:920}
+    #C3{top:336; left:1006}
+    #c_A6{top:169; left:905}
+    #c_B4{top:165; left:1030}
+    #c_B2{top:165; left:995}
+    #c_C1{top:336; left:832}
+    #c_C2{top:336; left:920}
+    #c_C3{top:336; left:1006}
+    #c_B4_B2{top:155; left:820}
+    #c_C1_C2{top:329; left:825}
+    #c_C2_C3{top:329; left:911}
+    #c_C1_C2_C3{top:329; left:822}
+
+h2 #{mens}
+bodyr
+  table(border='1', style='text-align:center')
+    caption Available Clusters/Tables ordered by priority
+    tr
+      th Id. #
+      th Cluster/Table
+      th Number of seats
+    each val in nws
+      tr
+        td= val.clusterId
+        td= val.clusterName
+        td= val.totalSeats
+
+  table(border='1', style='text-align:center')
+    caption Confirmed Reservations
+    tr
+      th Reserv. Id
+      th Party Size
+      th Waiting time in min 
+      th Cutomer Id
+      th Reservation Time
+    each val in nys
+      tr
+        td= val.reservationId
+        td= val.reservationPartySize
+        td= val.restimemin
+        td= val.customerId
+        td= val.reservationDateTime
+
+
+  table(border='1', style='text-align:center')
+    caption Active WaitList
+    tr
+      th Waitlist Id
+      th Party Size
+      th Waiting time in min
+      th Cutomer Id
+    each val in nus
+      tr
+        td= val.waitlistId
+        td= val.waitlistPartySize
+        td= val.waitimemin
+        td= val.customerId
+.layout
+  img(name='layout' src='layout')
+#A6.table
+  img(name='A_6' src=T1)
+#B4.table
+  img(name='B_4' src=T2)
+#B2.table
+  img(name='B_2' src=T3)
+#C1.table
+  img(name='C1' src=T4)
+#C2.table
+  img(name='C2' src=T5)
+#C3.table
+  img(name='C3' src=T6)
+#c_A6.cluster
+  img(name='A_6' src=C1)
+#c_B4.cluster
+  img(name='B_4' src=C2)
+#c_B2.cluster
+  img(name='B_2' src=C3)
+#c_C1.cluster
+  img(name='C1' src=C4)
+#c_C2.cluster
+  img(name='C2' src=C5)
+#c_C3.cluster
+  img(name='C3' src=C6)
+#c_B4_B2.cluster
+  img(name='c_B4_CB2' src=C7)
+#c_C1_C2.cluster
+  img(name='c_C1_C2' src=C8)
+#c_C2_C3.cluster
+  img(name='c_C2_C3' src=C9)
+#c_C1_C2_C3.cluster
+  img(name='c_C1_C2_C3' src=C10)

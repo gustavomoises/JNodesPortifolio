@@ -1,0 +1,75 @@
+doctype html
+head
+  meta(charset='ISO-8859-1')
+  title #{ title }
+h2 #{mens}
+html(lang='en')
+  body
+    table(border='1')
+      caption Table Availability
+      tr
+        th TableId
+        th Available?
+        th Checkout?
+        th Cleaning?
+        th ClusterId
+
+
+      each val in nos
+        tr
+          td= val.tableId
+          td= val.tableAvailabilityStatus
+          td= val.tableCheckoutStatus
+          td= val.tableCleaningStatus
+          td= val.clusterId
+    table(border='1')
+      caption WaitList
+      tr
+        th Waitlist Id
+        th Cutomer Id
+        th Party Size
+        th Check-in time H:M:S
+        th Waiting time in min
+
+
+      each val in nus
+        tr
+          td= val.waitlistId
+          td= val.customerId
+          td= val.waitlistPartySize
+          td= val.checkinDateTime
+          td= val.waitimemin
+    table(border='1')
+      caption Reservations
+      tr
+        th ReservationId
+        th Cutomer Id
+        th Party Size
+        th Reservation tine H:M:S
+        th Reservation proximity in min 
+        th Waiting time in min 
+
+
+      each val in nys
+        tr
+          td= val.reservationId
+          td= val.customerId
+          td= val.reservationPartySize
+          td= val.reservationDateTime
+          td= val.restimemin
+          td= val.waitimemin
+    table(border='1')
+      caption Cluster Priority
+      tr
+        th ClusterId
+        th Cluster Name
+        th Cluster Priority
+        th Number of seats
+
+
+      each val in nws
+        tr
+          td= val.clusterId
+          td= val.clusterName
+          td= val.clusterPriority
+          td= val.totalSeats

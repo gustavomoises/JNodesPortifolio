@@ -1,0 +1,39 @@
+doctype html
+head
+  meta(charset='ISO-8859-1')
+  title #{ title }
+h2 #{mess}
+body
+   table(border='1', style='text-align:center')
+     tr
+       th Id
+       th Table
+       th Available?
+       th Checkout?
+       th Cleaning?
+       th Table Group
+
+     each val in nos
+       tr
+         td= val.tableId
+         td= val.tableName
+         td= val.tableAvailabilityStatus
+         td= val.tableCheckoutStatus
+         td= val.tableCleaningStatus
+         td= val.clusterId
+form(method='post' action='/tableavailabilityentry')
+  | Table:
+  input#tableId(type='number' name="tableId" title='Type the table to change its status')
+  input(type='checkbox' name='noshow' title='If the customer did not appear in the table, check the box')
+  |NO SHOW?
+  br
+  | &#x9;&#x9;Availability Status:
+  input#tableAvailabilityStatus(type='number' name="tableAvailabilityStatus" title=' Type 1 if the table is available and 0 if it is unavailable.')
+  br
+  | &#x9;&#x9;Check out Status:
+  input#tableCheckoutStatus(type='number' name="tableCheckoutStatus" title=' Type 1 if the table is under check out and 0 otherwise')
+  br
+  | &#x9;&#x9;Cleaning Status:
+  input#tableCleaningStatus(type='number' name="tableCleaningStatus" title=' Type 1 if the table is under cleaning and 0 otherwise')
+  br
+  button(type='submit') Save
